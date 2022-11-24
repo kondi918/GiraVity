@@ -43,10 +43,6 @@ public class EventController : MonoBehaviour
     }
     void Update()
     {
-        spawnTime -= Time.deltaTime;
-        if(spawnTime <= 0){
-            AsteroidRain();
-            spawnTime = 60f;
-        }
+        timers_checking();
     }
 }

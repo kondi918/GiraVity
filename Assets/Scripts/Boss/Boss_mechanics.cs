@@ -30,18 +30,18 @@ public class Boss_mechanics : MonoBehaviour
         head_4 = GameObject.Find("head (3)");
 
         bossHpSlider = transform.Find("BossUI").Find("Slider").GetComponent<Slider>();
-
-        bossHpSlider.value = 1f;
     }
 
     public void TakeDamage(int damage)
     {
 
         bossHP -= damage;
-        bossHpSlider.value -= 0.1f;
+        bossHpSlider.value -= 1;
         Debug.Log($"Boss hit! {bossHP} left");
         if (bossHP <= 0)
+        {
             Die();
+        }
     }
 
     private void Die()

@@ -609,7 +609,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1096137409, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
       propertyPath: bossHP
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1096137409, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
       propertyPath: asteroid
@@ -674,6 +674,14 @@ PrefabInstance:
     - target: {fileID: 3542915505330127191, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421111046899673358, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421111046899673358, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df13d88d6b5e3ba43ba2d04f80906a7d, type: 3}
@@ -885,7 +893,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  killPoints: 100
 --- !u!114 &270127353
 MonoBehaviour:
   m_ObjectHideFlags: 0

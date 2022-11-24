@@ -48,10 +48,4 @@ public class collisionDetection : MonoBehaviour
             PlayerPrefs.SetInt("Lost", 1);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
