@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
-
-    GameObject[] enemies = new GameObject[10];
-    public float spawnTime = 60f;
     public GameObject asteroid;
     private GameObject new_asteroid;
     private float asteroid_rain_timer;
@@ -17,7 +14,7 @@ public class EventController : MonoBehaviour
         {
             Vector3 main_character_position = GameObject.Find("giraffe").transform.position;
             time_between_asteroid = 0;
-            new_asteroid = GameObject.Instantiate(asteroid, new Vector3(Random.Range(main_character_position.x - 15, main_character_position.x + 15), main_character_position.y + 20, 0), Quaternion.identity);
+            new_asteroid = GameObject.Instantiate(asteroid, new Vector3(Random.Range(main_character_position.x - 20, main_character_position.x + 20), main_character_position.y + 20, 0), Quaternion.identity);
             new_asteroid.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
             new_asteroid.SetActive(true);
             Destroy(new_asteroid, 5f);

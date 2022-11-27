@@ -9,7 +9,6 @@ public class PullIntoTheHole : MonoBehaviour
     private float distance;
     private GameObject blackHole;
     private GameObject player;
-    private Vector2 direct;
     private float min_distance = 7f;
     private int easingIDx = -1;
     private int easingIDy = -1;
@@ -33,15 +32,14 @@ public class PullIntoTheHole : MonoBehaviour
     private void check_collision()
     {
         min_distance += 0.001f;
-        distance = Vector3.Distance(blackHole.transform.position, player.transform.position);
+        distance = Vector2.Distance(blackHole.transform.position, player.transform.position);
         if (distance < min_distance)
         {
             //player.transform.position = blackHole.transform.position + (player.transform.position - blackHole.transform.position) * 0.97f;
             if (!LeanTween.isTweening(easingIDx))
                 easingIDx = LeanTween.value(player.transform.position.x, blackHole.transform.position.x + (player.transform.position.x - blackHole.transform.position.x) * 0.85f, 0.1f).setOnUpdate(IncreaseValue).uniqueId;
             if (!LeanTween.isTweening(easingIDy))
-                easingIDy = LeanTween.value(player.transform.position.y, blackHole.transform.position.y + (player.transform.position.y - blackHole.transform.position.y) * 0.85f, 0.1f).setOnUpdate(IncreaseValueY).uniqueId;
-
+               easingIDy = LeanTween.value(player.transform.position.y, blackHole.transform.position.y + (player.transform.position.y - blackHole.transform.position.y) * 0.85f, 0.1f).setOnUpdate(IncreaseValueY).uniqueId;
         }
 
     }

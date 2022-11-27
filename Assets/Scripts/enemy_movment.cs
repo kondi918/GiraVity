@@ -5,7 +5,6 @@ using UnityEngine;
 public class enemy_movment : MonoBehaviour
 {
     public GameObject bullet;
-
     public GameObject heart;
     private GameObject projectile_enemy;
     GameObject enemy_pattern;
@@ -47,12 +46,7 @@ public class enemy_movment : MonoBehaviour
         }
         else
         {
-            float random_range = Random.Range(0.3f, 1);
-            if(random_generator_timer > 1 )
-            {
-                random_range = Random.Range(0.3f, 1);
-            }
-            if (bullet_time > random_range)
+            if (bullet_time >= 1)
             {
                 enemy_shooting();
                 bullet_time = 0;
@@ -62,11 +56,10 @@ public class enemy_movment : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
        if(collision.gameObject.ToString() == "bullet_pseudo(Clone) (UnityEngine.GameObject)")
        {
             clonning_enemies.nr_of_enemies--;
-            if(Random.Range(0,100) < 10f){
+            if(Random.Range(0,100) < 5f){
                 GameObject hearth = GameObject.Instantiate(heart, transform.position, Quaternion.identity);
                 hearth.SetActive(true);
             }

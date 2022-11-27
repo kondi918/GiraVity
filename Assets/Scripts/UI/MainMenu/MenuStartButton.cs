@@ -24,9 +24,7 @@ public class MenuStartButton : Debuggable, IPointerEnterHandler, IPointerExitHan
     {
         button = GetComponent<Button>();
         PrintDebugLog($"Button null? : {button == null}");
-        PrintDebugLog($"GameController null? : {GameController.Instance == null}");
         buttonSprite = transform.GetComponent<Image>();
-        button.onClick.AddListener(menuUI.LoadGameScene);
     }
     
     [SerializeField] private GameObject girrafeSprite;

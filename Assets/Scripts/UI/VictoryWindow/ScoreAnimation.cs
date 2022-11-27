@@ -27,10 +27,15 @@ public class ScoreAnimation : MonoBehaviour
         easingID = LeanTween.value(0,value, 6f).setOnUpdate(IncreaseValue).setOnComplete(FinalScale).uniqueId;
         
     }
-    void FinalScale()
+    public void FinalScale()
     {
         LeanTween.cancel(scaleEasingID);
         LeanTween.scale(gameObject, orginalScale, 2f);
+    }
+    public void Leandestroy()
+    {
+        LeanTween.reset();
+        LeanTween.Destroy(gameObject, easingID);
     }
     void IncreaseValue(float value)
     {

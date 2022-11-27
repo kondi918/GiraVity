@@ -10,12 +10,14 @@ public class VictoryWindow : MonoBehaviour
 
     private Vector3 meteoritePosition = new Vector3(-200, 220);
     private Vector3 meteoriteFinalPosition = new Vector3(-620, -220);
+    public ScoreAnimation animator;
     private int randomValue;
     private float timeToDestroy = 4f;
     public void OnClickDoneButton()
     {
+        LeanTween.reset();
+        //animator.Leandestroy();
         mainMenu.SetActive(true);
-        
         gameObject.SetActive(false);
     }
 

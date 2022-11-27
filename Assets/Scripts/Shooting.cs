@@ -12,7 +12,6 @@ public class Shooting : MonoBehaviour
     private Vector3 direction;
     private float max_velocity = 30f;
     private float bullet_speed = 0.10f;
-
     private Camera mainCamera;
     private Transform giraffe;
     private Transform plasmagun;
@@ -61,8 +60,6 @@ public class Shooting : MonoBehaviour
 
         blasterSFX.PlayOneShot(blasterSFX.clip);
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (bullet_speed >= 0.2)

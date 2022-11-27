@@ -28,7 +28,6 @@ public class Boss_mechanics : MonoBehaviour
         head_2 = GameObject.Find("head (1)");
         head_3 = GameObject.Find("head (2)");
         head_4 = GameObject.Find("head (3)");
-
         bossHpSlider = transform.Find("BossUI").Find("Slider").GetComponent<Slider>();
     }
 
@@ -43,14 +42,20 @@ public class Boss_mechanics : MonoBehaviour
             Die();
         }
     }
-
     private void Die()
     {
         //SceneManager.LoadScene("MainMenuScene");
         map_objects.SetActive(true);
-        GameObject.Find("giraffe").transform.position = new Vector3(0, 0, 0);
+        GameObject main_character = GameObject.Find("giraffe");
+        main_character.transform.position = new Vector3(0, 0, 0);
+        GameObject black_hole = GameObject.Find("black_hole_official");
+        black_hole.transform.localScale = new Vector3(1, 1, 0);
+        while(Vector2.Distance(black_hole.transform.position,main_character.transform.position) < 40)
+        {
+            black_hole.transform.position = new Vector2(Random.Range(-99, 100),Random.Range(-90, 91));
+        }
+        GameObject.Find("Camera").GetComponent<Camera>().orthographicSize = 16;
     }
-
     private Vector3 direction_calculate(Vector3 head_position)
     {
         Vector3 direction = GameObject.Find("giraffe").transform.position - head_position;

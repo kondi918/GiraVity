@@ -13,21 +13,19 @@ public class EnteringBoss : MonoBehaviour
         black_hole_collider = GameObject.Find("black_hole_official").GetComponent<Collider2D>();
         main_char_collider = GameObject.Find("giraffe").GetComponent<Collider2D>();
     }
-    void FixedUpdate()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (black_hole_collider.IsTouching(main_char_collider))
+        if (collision.gameObject.name == "black_hole_official")
         {
             for(int i=0; i<clonning_enemies.enemies_list.Count; i++)
             {
                 Object.Destroy(clonning_enemies.enemies_list[i]);
             }
-            GameObject.Find("black_hole_official").transform.localScale = new Vector3(1, 1, 0);
             clonning_enemies.nr_of_enemies = 0;
             PullIntoTheHole.pulling = false;
-            Debug.Log("dziala");
             GameObject.Find("giraffe").transform.position = new Vector3(480f, 0f, 0f);
-            Debug.Log(GameObject.Find("giraffe").transform.position);
-            boss = Instantiate(boss_pattern, new Vector3(boss_pattern.transform.position.x, boss_pattern.transform.position.y, boss_pattern.transform.position.z), Quaternion.identity, transform);
+            GameObject.Find("Camera").GetComponent<Camera>().orthographicSize = 20;
+            boss = Instantiate(boss_pattern, new Vector3(boss_pattern.transform.position.x, boss_pattern.transform.position.y, boss_pattern.transform.position.z), Quaternion.identity);
             boss.SetActive(true);
             GameObject.Find("MAP_OBJECTS").SetActive(false);
         }
