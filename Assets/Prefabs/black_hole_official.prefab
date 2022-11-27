@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4869686406983151727}
   - component: {fileID: 3158692961629318697}
   - component: {fileID: 7865056853252157103}
-  - component: {fileID: 1787448125}
   - component: {fileID: 1787448137}
+  - component: {fileID: 4353297389695747556}
   - component: {fileID: 1787448118}
   m_Layer: 7
   m_Name: black_hole_official
@@ -100,7 +100,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24d91307ea39294594f72ed5d19757e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &1787448125
+--- !u!58 &1787448137
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123245391218030166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.40620708, y: 0.096206665}
+  serializedVersion: 2
+  m_Radius: 1.6070662
+--- !u!50 &4353297389695747556
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -121,22 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &1787448137
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123245391218030166}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.40620708, y: 0.096206665}
-  serializedVersion: 2
-  m_Radius: 1.6070662
 --- !u!95 &1787448118
 Animator:
   serializedVersion: 4

@@ -11,16 +11,17 @@ public class BlackHoleMovement : MonoBehaviour
     private float y_move;
     private Vector2 size;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Debug.Log("xd");
         while (Vector2.Distance(GameObject.Find("giraffe").transform.position, transform.position) < 40)
         {
             transform.position = new Vector2(Random.Range(-99, 100), Random.Range(-90, 91));
         }
-        x_move = Random.Range(150, 250);
-        y_move = Random.Range(150, 250);
+        //x_move = Random.Range(150, 250);
+        //y_move = Random.Range(150, 250);
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(30 * Time.deltaTime * x_move, 30 * Time.deltaTime * y_move));
+        rb.AddForce(new Vector2(300, 300));
     }
     private void scale()
     {
